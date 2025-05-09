@@ -26,4 +26,9 @@ public class ProductoController {
         return iproducto.save(nuevoproducto);
     }
 
+    @Transactional(readOnly = true)
+    @GetMapping("/libros2")
+    public List<ProductoEntity> getLibros2() {
+        return iproducto.findAll();
+    }
 }
